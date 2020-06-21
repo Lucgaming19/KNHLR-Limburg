@@ -43,12 +43,15 @@ module.exports.run = async (bot, message, args) => {
 			kickUser.kick(reason).catch(err => {
 				if (err) return message.reply("There is an error occured");
 			});
-			var channel = message.member.guild.channels.cache.get("724271631912140830");
 
-			if (!channel) return;
+			message.channel.send(embed);
+			message.kickUser.send(embed);
+			var kanaal = message.member.guild.channels.cache.get("724271631912140830");
 
-			channel.send(embed);
-			warnUser.send(embed);
+			if (!kanaal) return;
+
+			kanaal.send(embed);
+
 		} else if (emoji === "❌") {
 
 			msg.delete();
