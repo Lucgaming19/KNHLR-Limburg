@@ -46,6 +46,7 @@ module.exports.run = async (bot, message, args) => {
 
 			message.channel.send(embed);
 			message.kickUser.send(embed);
+			
 			var kanaal = message.member.guild.channels.cache.get("724271631912140830");
 
 			if (!kanaal) return;
