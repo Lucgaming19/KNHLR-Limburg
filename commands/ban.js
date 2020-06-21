@@ -48,7 +48,6 @@ module.exports.run = async (bot, message, args) => {
 			if (!channel) return;
 
 			channel.send(embed);
-
 			kickUser.send(embed);
 		} else if (emoji === "❌") {
 

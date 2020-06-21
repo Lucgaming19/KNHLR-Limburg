@@ -40,6 +40,8 @@ module.exports.run = async (bot, message, args) => {
 
 			msg.delete();
 
+			kickUser.send(embed);
+
 			kickUser.kick(reason).catch(err => {
 				if (err) return message.reply("There is an error occured");
 			});
