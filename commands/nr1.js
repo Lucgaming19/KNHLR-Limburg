@@ -2,7 +2,7 @@ const discord = require("discord.js")
 
 module.exports.run = async (bot, message, args) => {
 
-    If(!hasRole("Jose") || hasRole("Skittle")) return sendMessage("U bent niet welkom hier");
+    if(!hasRole("Jose") || hasRole("Skittle")) return sendMessage("U bent niet welkom hier");
     return message.channel.send("Prive zaken, dus niet de jouwe");
 
 }
