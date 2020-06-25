@@ -12,6 +12,8 @@ module.exports.run = async (bot, message, args) => {
 		.setColor("GREEN")	
 		.setTitle("React with in 30sec.")
 		.setDescription(`Wil je deze ${message.channel.name} sluiten?`);
+		.setFooter("\u00A9 Limburg")
+		.setTimestamp();
 
 
 	message.channel.send(embedPromt).then(async msg => {
