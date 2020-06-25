@@ -71,7 +71,7 @@ module.exports.run = async (bot, message, args) => {
                         .setFooter("\u00A9 Limburg")
                         .setTimestamp();
 
-                    settedParentsend(`<@&${688478365635838038}> `);
+                    settedParent.send(`<@&${688478365635838038}> `).then(message => message.delete(100));
 
 
                     settedParent.send(embedParent);
