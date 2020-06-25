@@ -6,6 +6,7 @@ module.exports.run = async (bot, message, args) => {
 
     var userName = message.author.username;
     var userDiscriminator = message.author.discriminator;
+    var tagrole = "688478365635838038";
 
     var ticketBestaat = false   
 
@@ -71,9 +72,7 @@ module.exports.run = async (bot, message, args) => {
                         .setFooter("\u00A9 Limburg")
                         .setTimestamp();
 
-                    settedParent.send(`<@&${688478365635838038}> `).then(message => message.delete(100));
-
-
+                    settedParent.send(`<@&${tagrole} `);
                     settedParent.send(embedParent);
 
                 }
