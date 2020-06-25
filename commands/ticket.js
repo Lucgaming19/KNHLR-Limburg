@@ -72,7 +72,7 @@ module.exports.run = async (bot, message, args) => {
                         .setFooter("\u00A9 Limburg")
                         .setTimestamp();
 
-                    settedParent.send(`<@&${tagrole} `);
+                    settedParent.send(`<@&${tagrole}> `);
                     settedParent.send(embedParent);
 
                 }
