@@ -5,23 +5,8 @@ module.exports.run = async (bot, message, args) => {
     const categoryID = "688478364163506220";
 
     var userName = message.author.username;
-    var userDiscriminator = message.author.discriminator;
 
     var ticketBestaat = false;
-
-    message.guild.channels.cache.forEach(channel => {
-
-        if (channel.name == userName.toLowerCase() + "-" + userDiscriminator) {
-            ticketBestaat = true;
-
-            message.reply("Je hebt al een ticket aangemaakt graag daar in veder gaan.");
-
-            return;
-        }
-
-    });
-
-    if (ticketBestaat) return;
 
     var embed = new discord.MessageEmbed()
         .setTitle("Geachte " + message.author.username + "Uw ticket wordt aangemaakt.")
@@ -30,7 +15,7 @@ module.exports.run = async (bot, message, args) => {
 
     message.channel.send(embed);
 
-    message.guild.channels.create(userName.toLowerCase() + "-" + userDiscriminator, { type: 'text' }).then(
+    message.guild.channels.create(userName.toLowerCase() + "-", { type: 'text' }).then(
         (createdChannel) => {
             createdChannel.setParent(categoryID).then(
                 (settedParent) => {
