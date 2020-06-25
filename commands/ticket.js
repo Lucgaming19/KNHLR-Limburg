@@ -7,7 +7,7 @@ module.exports.run = async (bot, message, args) => {
     var userName = message.author.username;
     var userDiscriminator = message.author.discriminator;
 
-    var ticketBestaat = false;
+    var ticketBestaat = false
 
     message.guild.channels.cache.forEach(channel => {
 
@@ -68,10 +68,11 @@ module.exports.run = async (bot, message, args) => {
                         .setFooter("\u00A9 Limburg")
                         .setTimestamp();
 
-                    settedParent.send('<@!688478365635838038>').then(function (message) {
-                        message.delete(1000);
-                        })
-                        .catch(err => {settedParent.send("Er is iets fout gegaan.")});
+                    var taggsupport = settedParent.send("< @ ! 688478365635838038>");
+
+                    setTimeout(function(){
+                        taggsupport.delete
+                    }, 1000);
                     settedParent.send(embedParent);
 
                 }
