@@ -20,6 +20,17 @@ module.exports.run = async (bot, message, args) => {
 			.setDescription(`${kickUser} is verwijderd uit deze ticket.`)
 			.setFooter("\u00A9 Limburg")
 			.setTimestamp();
+
+		var embedremoveddm = new discord.MessageEmbed()
+			.setColor("RED")
+			.setTitle(`U bent verwijderd uit ${channel.name}`)
+			.setDescription(`U bent verwijderd door ${message.author}`)
+			.setFooter("\u00A9 Limburg")
+			.setTimestamp();
+
+		message.send(embedremoved);
+		kickUser.send(embedremoveddm);
+		
 	}
 
 }
