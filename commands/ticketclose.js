@@ -11,7 +11,7 @@ module.exports.run = async (bot, message, args) => {
 
         var embedCreateTicket = new discord.MessageEmbed()
             .setTitle("Ticket," + message.channel.name)
-            .setDescription("Deze ticket Is afgerond door:" + message.author.name + ".")
+            .setDescription(`Deze ticket Is afgerond door: ${message.author}`)
             .setFooter("Ticket is gesloten.");
 
         var ticketChannel = message.member.guild.channels.cache.find(channel => channel.name === "logs");
