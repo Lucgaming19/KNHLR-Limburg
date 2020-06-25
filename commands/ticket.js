@@ -7,9 +7,6 @@ module.exports.run = async (bot, message, args) => {
     var userName = message.author.username;
     var userDiscriminator = message.author.discriminator;
 
-    if (!args[0]) return message.reply("no reason found!");
-    var reason = args.slice(1).join(" ");
-
     var ticketBestaat = false   
 
     message.guild.channels.cache.forEach(channel => {
@@ -25,6 +22,9 @@ module.exports.run = async (bot, message, args) => {
     });
 
     if (ticketBestaat) return;
+
+    if (!args[0]) return message.reply("no reason found!");
+    var reason = args.slice(1).join(" ");
 
     var embed = new discord.MessageEmbed()
         .setTitle("Geachte " + message.author.username + "Uw ticket wordt aangemaakt.")
