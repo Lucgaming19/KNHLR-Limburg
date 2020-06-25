@@ -4,7 +4,7 @@ module.exports.run = async (bot, message, args) => {
 
     const categoryID = "688478364163506220";
 
-    if (!message.member.hasRole("Support")) return message.reply("U heeft niet de bevoegdheid om de ticket te sluiten.");
+    if(!message.member.roles.cache.has('Support')) return message.channel.send("U heeft niet de juiste rollen om dit te doen.");
 
     if (message.channel.parentID == categoryID) {
         message.channel.delete();
