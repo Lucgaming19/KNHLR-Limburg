@@ -12,6 +12,8 @@ module.exports.run = async (bot, message, args) => {
             .setDescription(`Deze ticket Is Geclaimed door: ${message.author}`)
             .setFooter("\u00A9 Limburg")
             .setTimestamp();
+
+        message.channel.send(embedCaimTicket);
         
     } else {
 
