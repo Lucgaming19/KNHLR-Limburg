@@ -73,6 +73,7 @@ module.exports.run = async (bot, message, args) => {
                     setTimeout(function(){
                         taggsupport.delete
                     }, 1000);
+
                     settedParent.send(embedParent);
 
                 }
