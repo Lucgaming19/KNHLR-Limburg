@@ -7,7 +7,6 @@ module.exports.run = async (bot, message, args) => {
     if (!message.member.roles.cache.has("688478365635838038")) return message.channel.send("U heeft niet de juiste rollen om dit te doen.");
 
     if (message.channel.parentID == categoryID) {
-        message.channel.delete();
 
         var embedPromt = new discord.MessageEmbed()
 		.setColor("GREEN")	
