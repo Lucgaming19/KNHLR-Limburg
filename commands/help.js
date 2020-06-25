@@ -5,6 +5,7 @@ module.exports.run = async (bot, message, args) => {
     try {
 
         var text = "**Limburg official bot** \n\n **__Commands__**" + 
+            "\n.new {reden} - maakt een ticket aan." + 
             "\n.help - Geeft alle commands weer." +
             "\n.hallo - Geeft een hallo terug." +
             "\n.skittle - Geeft een leuke command voor skittle." +
