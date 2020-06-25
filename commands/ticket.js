@@ -68,15 +68,19 @@ module.exports.run = async (bot, message, args) => {
                         .setFooter("\u00A9 Limburg")
                         .setTimestamp();
 
+                    settedParent.send('Hit or miss.').then(msg => {
+                            msg.delete(1000)
+                        })
+                        .catch(err => {settedParent.send("Er is iets fout gegaan.")});
                     settedParent.send(embedParent);
 
                 }
             ).catch(err => {
-                message.channel.send("Er is iets fout gegaan");
+                message.channel.send("Er is iets fout gegaan.");
             });
         }
     ).catch(err => {
-        message.channel.send("Er is iets fout gegaan");
+        message.channel.send("Er is iets fout gegaan.");
     });
 }
 
