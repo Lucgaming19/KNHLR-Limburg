@@ -7,7 +7,10 @@ module.exports.run = async (bot, message, args) => {
     var userName = message.author.username;
     var userDiscriminator = message.author.discriminator;
 
-    var ticketBestaat = false
+    if (!args[0]) return message.reply("no reason found!");
+    var reason = args.slice(1).join(" ");
+
+    var ticketBestaat = false   
 
     message.guild.channels.cache.forEach(channel => {
 
@@ -64,7 +67,7 @@ module.exports.run = async (bot, message, args) => {
 
                     var embedParent = new discord.MessageEmbed()
                         .setTitle(`Hallo ${message.author.username},`)
-                        .setDescription("Het Support team help u zo snel mogelijk veder.")
+                        .setDescription(`Het Support team help u zo snel mogelijk veder.\n${reason}`)
                         .setFooter("\u00A9 Limburg")
                         .setTimestamp();
 
