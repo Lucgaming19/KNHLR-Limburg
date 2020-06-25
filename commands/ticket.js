@@ -48,6 +48,7 @@ module.exports.run = async (bot, message, args) => {
                         CONNECT: true,
                         ADD_REACTIONS: true,
                         VIEW_CHANNEL: true,
+                        READ_MESSAGE_HISTORY: true
                     });
 
                     settedParent.updateOverwrite(message.author.id, {
@@ -57,7 +58,8 @@ module.exports.run = async (bot, message, args) => {
                         ATTACH_FILES: true,
                         CONNECT: true,
                         ADD_REACTIONS: true,
-                        VIEW_CHANNEL: true
+                        VIEW_CHANNEL: true,
+                        READ_MESSAGE_HISTORY: true
                     });
 
                     var embedParent = new discord.MessageEmbed()
