@@ -4,6 +4,7 @@ module.exports.run = async (bot, message, args) => {
 
 	const categoryID = "688478364163506220";
 	const settedparent = message.channel.id
+	const channelName = message.channel.name
 
 	if (!message.member.roles.cache.has("688478365635838038")) return message.channel.send("U heeft niet de juiste rollen om dit te doen.");
 	if (!args[0]) return message.reply("no username found!");
@@ -23,12 +24,12 @@ module.exports.run = async (bot, message, args) => {
 
 		var embedremoveddm = new discord.MessageEmbed()
 			.setColor("RED")
-			.setTitle(`U bent verwijderd uit ${channel.name}`)
+			.setTitle(`U bent verwijderd uit ${channelName}`)
 			.setDescription(`U bent verwijderd door ${message.author}`)
 			.setFooter("\u00A9 Limburg")
 			.setTimestamp();
 
-		message.send(embedremoved);
+		message.channel.send(embedremoved);
 		kickUser.send(embedremoveddm);
 		
 	}
