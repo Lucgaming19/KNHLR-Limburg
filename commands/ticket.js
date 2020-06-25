@@ -9,7 +9,7 @@ module.exports.run = async (bot, message, args) => {
 
     var ticketBestaat = false;
 
-    message.guild.channels.cache.array.forEach(channel => {
+    message.guild.channels.cache.forEach(channel => {
 
         if (channel.name == userName.toLowerCase() + "-" + userDiscriminator) {
             ticketBestaat = true;
@@ -55,14 +55,18 @@ module.exports.run = async (bot, message, args) => {
                         .setFooter("\u00A9 Limburg")
                         .setTimestamp();
 
-                    settedParent.channel.send("<@688478365635838038>");
+                    settedParent.send("<@688478365635838038>");
                     message.delete();
-                    settedParent.channel.send(embedParent);
+                    settedParent.send(embedParent);
 
                 }
-            )
+            ).catch(err => {
+                message.channel.send("Er is iets fout gegaan");
+            });
         }
-    )
+    ).catch(err => {
+        message.channel.send("Er is iets fout gegaan");
+    });
 }
 
 module.exports.help = {
