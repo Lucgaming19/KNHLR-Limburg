@@ -68,11 +68,11 @@ module.exports.run = async (bot, message, args) => {
                         .setFooter("\u00A9 Limburg")
                         .setTimestamp();
 
-                    var taggsupport = settedParent.send("< @ ! 688478365635838038>");
+                    var taggsupport = settedParent.send("<@!688478365635838038>");
 
                     setTimeout(function(){
                         taggsupport.delete
-                    }, 1000);
+                    }, 1);
 
                     settedParent.send(embedParent);
 
