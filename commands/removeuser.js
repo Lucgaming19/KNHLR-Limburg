@@ -9,7 +9,7 @@ module.exports.run = async (bot, message, args) => {
 	var kickUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(arg[0]));
 
 	if (message.channel.parentID == categoryID) {
-		channel.updateOverwrite(message.guild.members.cache.find(x => x.name === `${kickUser}`), {
+		channel.message.updateOverwrite(message.guild.members.cache.find(x => x.name === `${kickUser}`), {
 			SEND_MESSAGES: false,
 			VIEW_CHANNEL: false
 		});
