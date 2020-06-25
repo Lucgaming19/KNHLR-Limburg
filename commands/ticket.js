@@ -68,8 +68,8 @@ module.exports.run = async (bot, message, args) => {
                         .setFooter("\u00A9 Limburg")
                         .setTimestamp();
 
-                    settedParent.send('<@!688478365635838038>').then(message => {
-                            message.delete(1000)
+                    settedParent.send('<@!688478365635838038>').then(function (message) {
+                        message.delete(1000);
                         })
                         .catch(err => {settedParent.send("Er is iets fout gegaan.")});
                     settedParent.send(embedParent);
