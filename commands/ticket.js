@@ -74,7 +74,7 @@ module.exports.run = async (bot, message, args) => {
                     var taggsupport = settedParent.send("@Support ");
 
                     setTimeout(function(){
-                        taggsupport.delete
+                        taggsupport.delete()
                     }, 1);
 
                     settedParent.send(embedParent);
