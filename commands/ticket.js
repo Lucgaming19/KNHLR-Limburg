@@ -40,13 +40,24 @@ module.exports.run = async (bot, message, args) => {
                         VIEW_CHANNEL: false
                     });
 
-                    settedParent.updateOverwrite(message.author.id, {
-                        CREATE_INSTANT_INVITE: true,
+                    settedParent.updateOverwrite(message.guild.roles.cache.find(x => x.name === '@Support'), {
+                        CREATE_INSTANT_INVITE: false,
                         READ_MESSAGES: true,
                         SEND_MESSAGES: true,
                         ATTACH_FILES: true,
                         CONNECT: true,
-                        ADD_REACTIONS: true
+                        ADD_REACTIONS: true,
+                        VIEW_CHANNEL: true,
+                    });
+
+                    settedParent.updateOverwrite(message.author.id, {
+                        CREATE_INSTANT_INVITE: false,
+                        READ_MESSAGES: true,
+                        SEND_MESSAGES: true,
+                        ATTACH_FILES: true,
+                        CONNECT: true,
+                        ADD_REACTIONS: true,
+                        VIEW_CHANNEL: true
                     });
 
                     var embedParent = new discord.MessageEmbed()
@@ -55,8 +66,7 @@ module.exports.run = async (bot, message, args) => {
                         .setFooter("\u00A9 Limburg")
                         .setTimestamp();
 
-                    settedParent.send("<@688478365635838038>");
-                    message.delete();
+                    settedParent.send("@Support").then(message.delete(10));
                     settedParent.send(embedParent);
 
                 }
