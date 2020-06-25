@@ -23,7 +23,7 @@ module.exports.run = async (bot, message, args) => {
 
     if (ticketBestaat) return;
 
-    if (!args[0]) return message.reply("no reason found!");
+    if (!args[0]) return message.reply("Gelieve een reden op te geven!");
     var reason = args.slice(0).join(" ");
 
     var embed = new discord.MessageEmbed()
