@@ -24,7 +24,7 @@ module.exports.run = async (bot, message, args) => {
     if (ticketBestaat) return;
 
     if (!args[0]) return message.reply("no reason found!");
-    var reason = args.slice(1).join(" ");
+    var reason = args.slice(0).join(" ");
 
     var embed = new discord.MessageEmbed()
         .setTitle("Geachte " + message.author.username + "Uw ticket wordt aangemaakt.")
