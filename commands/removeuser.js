@@ -17,7 +17,7 @@ module.exports.run = async (bot, message, args) => {
 		var embedremoved = new discord.MessageEmbed
 			.setColor("RED")
 			.setTitle("gebruiker verwijderd")
-			.setDescription(`${kickUser} is verwijderd uit deze ticket.`);
+			.setDescription(`${kickUser} is verwijderd uit deze ticket.`)
 			.setFooter("\u00A9 Limburg")
 			.setTimestamp();
 	}

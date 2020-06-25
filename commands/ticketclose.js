@@ -11,7 +11,7 @@ module.exports.run = async (bot, message, args) => {
         var embedPromt = new discord.MessageEmbed()
 		.setColor("GREEN")	
 		.setTitle("React with in 30sec.")
-		.setDescription(`Wil je deze ${message.channel.name} sluiten?`);
+		.setDescription(`Wil je deze ${message.channel.name} sluiten?`)
 		.setFooter("\u00A9 Limburg")
 		.setTimestamp();
 
