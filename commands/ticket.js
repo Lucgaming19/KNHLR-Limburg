@@ -71,11 +71,7 @@ module.exports.run = async (bot, message, args) => {
                         .setFooter("\u00A9 Limburg")
                         .setTimestamp();
 
-                    var taggsupport = settedParent.send("@Support ");
-
-                    setTimeout(function(){
-                        taggsupport.delete()
-                    }, 1);
+                    settedParent.send("@Support").then(m => m.delete(5000));
 
                     settedParent.send(embedParent);
 
