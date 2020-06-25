@@ -10,7 +10,7 @@ module.exports.run = async (bot, message, args) => {
         message.channel.delete();
 
         var embedCreateTicket = new discord.MessageEmbed()
-            .setTitle("Ticket," + message.channel.name)
+            .setTitle("Ticket, " + message.channel.name)
             .setDescription(`Deze ticket Is afgerond door: ${message.author}`)
             .setFooter("Ticket is gesloten.");
 
