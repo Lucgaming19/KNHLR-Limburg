@@ -40,7 +40,7 @@ module.exports.run = async (bot, message, args) => {
                         VIEW_CHANNEL: false
                     });
 
-                    settedParent.updateOverwrite(message.guild.roles.cache.find(x => x.name === '@Support'), {
+                    settedParent.updateOverwrite(message.guild.roles.cache.find(x => x.name === 'Support'), {
                         CREATE_INSTANT_INVITE: false,
                         READ_MESSAGES: true,
                         SEND_MESSAGES: true,
@@ -68,7 +68,9 @@ module.exports.run = async (bot, message, args) => {
                         .setFooter("\u00A9 Limburg")
                         .setTimestamp();
 
+
                     settedParent.send(embedParent);
+
 
                 }
             ).catch(err => {
