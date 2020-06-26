@@ -28,7 +28,7 @@ module.exports.run = async (bot, message, args) => {
     var reason = args.slice(0).join(" ");
 
     var embed = new discord.MessageEmbed()
-        .setTitle("Geachte " + message.author.username + "Uw ticket wordt aangemaakt.")
+        .setTitle("Geachte " + message.author.username + " Uw ticket wordt aangemaakt.")
         .setFooter("\u00A9 Limburg")
         .setTimestamp();
 
