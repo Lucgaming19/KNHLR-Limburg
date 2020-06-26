@@ -67,7 +67,7 @@ module.exports.run = async (bot, message, args) => {
                     });
 
                     var embedParent = new discord.MessageEmbed()
-                        .setColor("blue")
+                        .setColor("#3498DB")
                         .setTitle(`Hallo ${message.author.username},`)
                         .setDescription(`Het Support team help u zo snel mogelijk veder. Reden: ${reason}`)
                         .setFooter("\u00A9 Limburg")
