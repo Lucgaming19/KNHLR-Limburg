@@ -3,18 +3,22 @@ const discord = require("discord.js")
 module.exports.run = async (bot, message, args) => {
 
     return message.channel.send("Een hele grote fles water graag.");
-    function vertraging1() {
-        message.channel.send("* fles water wordt op de tafel gezet *");
-    }
-    function vertraging2() {
-        message.channel.send("*Pakt de fles en dringt hem op*");
-    }
-    function vertraging3() {
-        message.channel.send("Is er meer?");
-    }
-    setTimeout(vertraging1, 1500);
-    setTimeout(vertraging2, 1500);
-    setTimeout(vertraging3, 1500);
+
+    var textchannel = message.channel;
+
+    var message1 = ("* fles water wordt op de tafel gezet *");
+    var message2 = ("*Pakt de fles en dringt hem op*");
+    var message3 = ("Is er meer?");
+
+    setTimeout(() => {
+        textchannel.send(message1);
+    }, 3000);
+    setTimeout(() => {
+        textchannel.send(message2);
+    }, 3000);
+    setTimeout(() => {
+        textchannel.send(message3);
+    }, 3000);
 }
 
 module.exports.help = {
