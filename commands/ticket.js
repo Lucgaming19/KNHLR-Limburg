@@ -80,7 +80,8 @@ module.exports.run = async (bot, message, args) => {
 
                 }
             ).catch(err => {
-                message.channel.send("Er is iets fout gegaan.");
+                console.log(err);
+                message.channel.send("er is iets fout gegaan");
             });
         }
     ).catch(err => {
