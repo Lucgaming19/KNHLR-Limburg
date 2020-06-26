@@ -73,7 +73,7 @@ module.exports.run = async (bot, message, args) => {
                         .setFooter("\u00A9 Limburg")
                         .setTimestamp();
 
-                    settedParent.send(`<@&${tagrole}> `).then(settedParent => m.delete(1000));
+                    settedParent.send(`<@&${tagrole}> `).then(settedParent => settedParent.delete(1));
                     settedParent.send(embedParent);
 
                 }
