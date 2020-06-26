@@ -73,7 +73,11 @@ module.exports.run = async (bot, message, args) => {
                         .setFooter("\u00A9 Limburg")
                         .setTimestamp();
 
-                    settedParent.send(`<@&${tagrole}> `);
+                    settedParent.message.send(`<@&${tagrole}> `);
+                    message.delete()
+                        .then(msg => console.log(`Deleted message from ${msg.author.username}`))
+                        .catch(console.error);
+
                     settedParent.send(embedParent);
 
                 }
