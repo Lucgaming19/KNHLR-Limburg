@@ -32,7 +32,7 @@ bot.on("ready", async () => {
 
 	console.log(`${bot.user.username} is online!`);
 
-	bot.user.setActivity("Prefix: . \u00A9 Limburg", { type: "LISTENING" });
+	bot.user.setActivity("Prefix: . \u00A9 DWF", { type: "LISTENING" });
 
 });
 
