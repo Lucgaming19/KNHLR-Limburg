@@ -28,7 +28,7 @@ module.exports.run = async (bot, message, args) => {
 
 			msg.delete();
 
-			message.reply("Het sluiten is geanuleerd").then(m => m.delete(5000));
+			message.reply("Het sluiten is geanuleerd").then(m => m.delete({ timeout: 5000 }));
 
 		}
 
