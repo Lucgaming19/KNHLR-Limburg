@@ -6,7 +6,7 @@ module.exports.run = async (bot, message, args) => {
     const settedparent = message.channel.id
     const channelName = message.channel.name
     if (message.channel.parentID == categoryID) {
-        return message.channel.send("**__binnen de 24 uur niet reageren word dit ticket gesloten!__**");
+        message.channel.send("**__binnen de 24 uur niet reageren word dit ticket gesloten!__**");
     }
 }
 
