@@ -1,6 +1,6 @@
-const discord = require('discord.js');
+/*const discord = require('discord.js');
 const fs = require('fs').promises;
-const jsdom = require('jsdom');
+const jsdom = require('jsdom').JSDOM;
 const { JSDOM } = jsdom;
 const dom = new JSDOM();
 const document = dom.window.document;
@@ -84,4 +84,4 @@ module.exports.run = async (bot, message, args) => {
 module.exports.help = {
     name: "transcript"
 
-}
+}*/
