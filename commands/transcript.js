@@ -1,5 +1,4 @@
 const discord = require('discord.js');
-const client = new discord.Client();
 const fs = require('fs').promises;
 const jsdom = require('jsdom');
 const { JSDOM } = jsdom;
@@ -14,7 +13,6 @@ module.exports.run = async (bot, message, args) => {
 
     if (message.channel.parentID == categoryID) {
 
-        await message.delete();
         let messageCollection = new discord.Collection();
         let channelMessages = await message.channel.fetchMessages({
             limit: 100
