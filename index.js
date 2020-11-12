@@ -5,11 +5,34 @@ const bot = new discord.Client();
 bot.commands = new discord.Collection();
 
 
-const commandFiles = fs.readdirSync('./commands/').filter(file => file.endsWith('.js'));
+
+fs.readdirsync("./commands/", (err, files) => {
+
+	if (err) console.log(err);
+
+	var jsFiles = files.filter(f => f.split(".").pop() === "js");
+
+	if (jsFiles.length <= 0) {
+		console.log("kon geen files finden.");
+		return;
+	}
+
+	jsFiles.forEach((f, i) => {
+
+		var fileGet = require(`./commands/${f}`);
+		console.log(`De file ${f} is geladen`);
+
+		bot.commands.set(fileGet.help.name, fileGet);
+
+	})
+
+});
+
+/*const commandFiles = fs.readdirSync('./commands/').filter(file => file.endsWith('.js'));
  for (const file of commandFiles) {
 	const command = require(`./commands/${file}`);
 	bot.commands.set(command.name, command);
-};
+};*/
 
 bot.on("ready", async () => {
 
