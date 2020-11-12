@@ -1,12 +1,12 @@
 ﻿const discord = require("discord.js")
 const botConfig = require("./botconfig.json")
 const fs = require("fs");
-const bot = new discord.Client();
-bot.commands = new discord.Collection();
+const clt = new discord.Client();
+clt.commands = new discord.Collection();
 
 
 
-/*fs.readdir("./commands/", (err, files) => {
+fs.readdir("./commands/", (err, files) => {
 
 	if (err) console.log(err);
 
@@ -22,29 +22,24 @@ bot.commands = new discord.Collection();
 		var fileGet = require(`./commands/${f}`);
 		console.log(`De file ${f} is geladen`);
 
-		bot.commands.set(fileGet.help.name, fileGet);
+		clt.commands.set(fileGet.help.name, fileGet);
 
 	})
 
-});*/
+});
 
-const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
- for (const file of commandFiles) {
-	const command = require(`./commands/${file}`);
-	bot.commands.set(command.name, command);
-};
 
-bot.on("ready", async () => {
+clt.on("ready", async () => {
 
-	console.log(`${bot.user.username} is online!`);
+	console.log(`${clt.user.username} is online!`);
 
-	bot.user.setActivity("Prefix: . \u00A9 Limburg", { type: "LISTENING" });
+	clt.user.setActivity("Prefix: . \u00A9 Limburg", { type: "LISTENING" });
 
 });
 
-bot.on("message", async message => {
+clt.on("message", async message => {
 
-	if (message.author.bot) return;
+	if (message.author.clt) return;
 
 	if (message.channel.type === "dm") return;	
 
@@ -56,11 +51,11 @@ bot.on("message", async message => {
 
 	var arguments = messageArray.slice(1);
 
-	var commands = bot.commands.get(command.slice(prefix.length));
+	var commands = clt.commands.get(command.slice(prefix.length));
 
 	if (!message.content.startsWith(prefix)) return;
 
-	if (commands) commands.run(bot, message, arguments);
+	if (commands) commands.run(clt, message, arguments);
 });
 
-bot.login(process.env.token); 
+clt.login(process.env.token); 
