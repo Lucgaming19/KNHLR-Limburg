@@ -6,7 +6,7 @@ bot.commands = new discord.Collection();
 
 
 
-fs.readdirsync("./commands/", (err, files) => {
+fs.readdirSync("./commands/", (err, files) => {
 
 	if (err) console.log(err);
 
