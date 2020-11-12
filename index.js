@@ -19,10 +19,10 @@ fs.readdir("./commands/", (err, files) => {
 
 	jsFiles.forEach((f, i) => {
 
-		var fileGet = require(`./commands/${f}`);
+		var filesGet = require(`./commands/${f}`);
 		console.log(`De file ${f} is geladen`);
 
-		bot.commands.set(fileGet.help.name, fileGet);
+		bot.commands.set(filesGet.help.name, filesGet);
 
     })
 
