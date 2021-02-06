@@ -12,7 +12,14 @@ module.exports.run = async (bot, message, args) => {
             { name: "\nIF WE BURN, YOU BURN WITH US : fire: © mockingjay", value: "" },
             { name: "\nFirefighters have the hardest jop they run in the diffrent direction als the citizens", value: "" },
             { name: "In times of war or uncertainty there is a special breed of warrior ready to answer our Nation’s call. A common man with uncommon desire to succeed. Forged by adversity, he stands alongside America’s finest special operations forces to serve his country, the American people, and protect their way of life. I am that man.", value: "" },
-            { name: "\n\nMy Trident is a symbol of honor and heritage.Bestowed upon me by the heroes that have gone before, it embodies the trust of those I have sworn to protect.By wearing the Trident I accept the responsibility of my chosen profession and way of life.It is a privilege that I must earn every day.", value: "" },
+            { name: "\n\nMy Trident is a symbol of honor and heritage.Bestowed upon me by the heroes that have gone before, it embodies the trust of those I have sworn to protect.By wearing the Trident I accept the responsibility of my chosen profession and way of life.It is a privilege that I must earn every day.", value: "" });
+
+
+    var embed2 = new discord.MessageEmbed()
+        .setColor("#ff0000")
+        .setFooter(message.member.displayName)
+        .setTimestamp()
+        .addFields(
             { name: "\n\nMy loyalty to Country and Team is beyond reproach. I humbly serve as a guardian to my fellow Americans always ready to defend those who are unable to defend themselves. I do not advertise the nature of my work, nor seek recognition for my actions. I voluntarily accept the inherent hazards of my profession, placing the welfare and security of others before my own.", value: "" },
             { name: "\n\nI serve with honor on and off the battlefield. The ability to control my emotions and my actions, regardless of circumstance, sets me apart from other men. Uncompromising integrity is my standard. My character and honor are steadfast. My word is my bond.", value: "" },
             { name: "\n\nWe expect to lead and be led. In the absence of orders I will take charge, lead my teammates and accomplish the mission. I lead by example in all situations.", value: "" },
@@ -22,6 +29,9 @@ module.exports.run = async (bot, message, args) => {
             { name: "\n\nBrave men have fought and died building the proud tradition and feared reputation that I am bound to uphold. In the worst of conditions, the legacy of my teammates steadies my resolve and silently guides my every deed. I will not fail.", value: "" });
 
     message.channel.send(embed).then(async msg => {
+        msg.delete();
+    });
+    message.channel.send(embed2).then(async msg => {
         msg.delete();
     });
 }
