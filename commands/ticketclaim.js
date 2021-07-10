@@ -20,6 +20,27 @@ module.exports.run = async (bot, message, args) => {
         message.channel.send("U kunt dit alleen in een ticket doen.");
 
     }
+ message.channel.updateOverwrite(message.guild.roles.cache.find(x => x.name === 'Support'), {
+                        CREATE_INSTANT_INVITE: false,
+                        READ_MESSAGES: false,
+                        SEND_MESSAGES: false,
+                        ATTACH_FILES: true,
+                        CONNECT: true,
+                        ADD_REACTIONS: true,
+                        VIEW_CHANNEL: false,
+                        READ_MESSAGE_HISTORY: true
+		});
+
+  message.channel.updateOverwrite(message.author.id, {
+                        CREATE_INSTANT_INVITE: false,
+                        READ_MESSAGES: true,
+                        SEND_MESSAGES: true,
+                        ATTACH_FILES: true,
+                        CONNECT: true,
+                        ADD_REACTIONS: true,
+                        VIEW_CHANNEL: true,
+                        READ_MESSAGE_HISTORY: true
+                    });
 }
 
 module.exports.help = {

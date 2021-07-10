@@ -13,15 +13,9 @@ module.exports.run = async (bot, message, args) => {
 			{ name: "prefix: .", value: "prefix: ." },
 			{ name: "excisting commands:", value: "Bestaande commands:" },
 			{ name: "server information", value: "serverinfo" },
-			{ name: "information", value: "info" },
-			{ name: "who is who", value: "wie" },
-			{ name: "jose", value: "jose" },
-			{ name: "ruth", value: "ruth" },
-			{ name: "mark", value: "mark" },
-			{ name: "luc", value: "luc" },
-			{ name: "pim", value: "pim" },
-			{ name: "jimmy", value: "jimmy" })
-		.setFooter("\u00A9 DWF Discord With Friends", "https://cdn.discordapp.com/avatars/717417310318624849/24ba2fe79f5b0dea81070b947415a6cc.png?size=256")
+			{ name: "help", value: "geeft alle commando's weer." },
+			{ name: "information", value: "info" })
+		.setFooter("\u00A9 Limburg", "https://cdn.discordapp.com/avatars/724261854557241415/f211d1c1934997dbda88bcf90c11a742.png?size=128")
 		.setTimestamp();
 
 	return message.channel.send(botEmbed);

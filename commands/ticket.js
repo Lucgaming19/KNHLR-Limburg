@@ -12,7 +12,7 @@ module.exports.run = async (bot, message, args) => {
 
     message.guild.channels.cache.forEach(channel => {
 
-        if (channel.name == userName.toLowerCase() + "-" + userDiscriminator) {
+        if (channel.name == userName.toLowerCase()) {
             ticketBestaat = true;
 
             message.reply("Je hebt al een ticket aangemaakt graag daar in veder gaan.");
@@ -34,7 +34,7 @@ module.exports.run = async (bot, message, args) => {
 
     message.channel.send(embed);
 
-    message.guild.channels.create(userName.toLowerCase() + "-" + userDiscriminator, { type: 'text' }).then(
+    message.guild.channels.create(userName.toLowerCase(), { type: 'text' }).then(
         (createdChannel) => {
             createdChannel.setParent(categoryID).then(
                 (settedParent) => {
